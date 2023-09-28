@@ -1,0 +1,47 @@
+.main{
+    min-height: 100vh;
+    background-image: url("https://img.freepik.com/free-vector/hand-drawn-back-school-background_23-2149464866.jpg?w=1380&t=st=1680288600~exp=1680289200~hmac=cfa3e9524a355b7127dc10e76e5b3deffba6c10417c271c43a2729803ec98763");
+    background-size: cover;
+    position: relative;
+
+}
+.cardmain{
+    position: absolute;
+    top:20%;
+    left: 40%;
+}
+.card {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: #b3f2e1; 
+    width: 200px; 
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+    background-color:#7bcfde; /* Change background color when hovering */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.card h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: x-large;
+   
+ 
+
+}
