@@ -27,6 +27,11 @@ function Classrooms() {
 
   // submit new data to database
   const handleSubmit = () => {
+
+    if (!className) {
+      alert('Class Name cannot be empty!');
+      return; // Stop sending data if subjectName is null
+    }
     // Create an object with the values
     const data = {
       "className": className,

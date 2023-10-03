@@ -32,6 +32,10 @@ const [teachers, setTeachers] = useState([]);
 
   // submit new data to database
   const handleSubmit = () => {
+    if (!firstName || !lastName || !contactNo || !email  ) {
+      alert('Fill all fileds!');
+      return; // Stop sending data if subjectName is null
+    }
     // Create an object with the values
     const data = {
       "firstName": firstName,

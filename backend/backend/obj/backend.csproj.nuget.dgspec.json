@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj": {}
+    "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj": {}
   },
   "projects": {
-    "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj": {
+    "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\Lasaru\\.nuget\\packages\\",
-        "outputPath": "D:\\Self-Projects\\stdmanage\\backend\\backend\\obj\\",
+        "outputPath": "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lasaru\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -27,6 +27,31 @@ namespace backend.Controllers
             var students = _context.Student.ToList();
             return Ok(students);
         }
+        // GET: api/student
+        [HttpGet("{name}")]
+        public async Task<IActionResult> Getselectedstudents(string name)
+        {
+
+            try
+            {
+                var students = await _context.Student
+                    .Where(student => student.FirstName + " " + student.LastName == name)
+                    .ToListAsync();
+
+                if (students.Count == 0)
+                {
+                    return Ok("0");
+                }
+
+                return Ok(students);
+            }
+            catch (Exception ex)
+            {
+                // Handle database or other exceptions here
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+
+        }
 
         // POST: api/student
         [HttpPost]

@@ -27,6 +27,10 @@ function Subjects() {
   
     // submit new data to database
     const handleSubmit = () => {
+      if (!subjectName) {
+        alert('Subject Name cannot be empty!');
+        return; // Stop sending data if subjectName is null
+      }
       // Create an object with the values
       const data = {
         "subjectName": subjectName,

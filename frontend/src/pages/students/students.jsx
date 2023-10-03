@@ -11,6 +11,9 @@ import cube from '../../assets/icons8-cube-24.png';
 function Students() {
   const [students, setStudents] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [selectedOption, setSelectedOption] = useState('');
+  const [classOptions, setClassOptions] = useState([]);
+  
   
 //get data from database 
   useEffect(() => {
@@ -30,11 +33,36 @@ function Students() {
   const [email, setEmail] = useState('');
   const [dob, setDOB] = useState('');
   const [age, setAge] = useState('');
-  const [classroom, setClassRoom] = useState('');
+
+  useEffect(() => {
+    // Make an API request to fetch the list of classes
+    axios.get('https://localhost:7190/api/classroom') 
+      .then((response) => {
+        // Assuming the API returns an array of teacher names, update the state
+       setClassOptions(response.data);
+
+        if (response.data.length > 0) {
+            setSelectedOption(`${response.data[0].className}`);
+          }
+      })
+      .catch((error) => {
+        console.error('Error fetching class data:', error);
+      });
+  }, []);
+
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+  };
 
 
   // submit new data to database
   const handleSubmit = () => {
+
+    if (!firstName || !lastName || !contactNo || !email || !contactPerson || !email  || !dob || !selectedOption  ) {
+      alert('Fill all fileds!');
+      return; 
+      
+    }
     // Create an object with the values
     const data = {
       "firstName": firstName,
@@ -44,7 +72,7 @@ function Students() {
   "emailAddress": email,
   "dateOfBirth": dob,
   "age": age,
-  "classroom": classroom
+  "classroom": selectedOption
     };
 
    
@@ -62,7 +90,7 @@ function Students() {
        setEmail('');
        setDOB('');
        setAge('');
-       setClassRoom('');
+       setSelectedOption('');
 
        //call get again to load data again
        axios.get('https://localhost:7190/api/student')
@@ -116,7 +144,7 @@ function Students() {
     setContactNo(student.contactNo);
     setEmail(student.emailAddress);
     setDOB(student.dateOfBirthString);
-    setClassRoom(student.classroom);
+   setSelectedOption(student.classroom);
   };
   
   const handleUpdate = () => {
@@ -129,7 +157,7 @@ function Students() {
       "emailAddress": email,
       "dateOfBirth": dob,
       "age": age,
-      "classroom": classroom
+      "classroom": selectedOption
     };
 
     axios.put(`https://localhost:7190/api/student/${selectedStudent.studentID}`, updatedData)
@@ -146,7 +174,7 @@ function Students() {
         setEmail('');
         setDOB('');
         setAge('');
-        setClassRoom('');
+        setSelectedOption('');
 
         //call get again to load data again
        axios.get('https://localhost:7190/api/student')
@@ -175,7 +203,7 @@ function Students() {
     setEmail('');
     setDOB('');
     setAge('');
-    setClassRoom('');
+    setSelectedOption('');
   }
 
   //delete method 
@@ -305,13 +333,13 @@ function Students() {
             </div>
             <div className='textbox'>
                 <h2 className='h2'>Classroom</h2>
-                <input
-              type="text"
-              className='input'
-              onChange={(e) => setClassRoom(e.target.value)} 
-              value={classroom}
-
-            />
+                <select className='input' placeholder='Select Classroom' value={selectedOption} onChange={handleOptionChange}>
+    {classOptions.map((option, index) => (
+      <option key={index} value={option.className}>
+        {option.className}
+      </option>
+    ))}
+  </select>
             </div>
             </div>
            

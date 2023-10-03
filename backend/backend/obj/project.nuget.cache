@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o6vvtU5bhkpifMZI0YVPERatEMpCYqpU7Bs7TX/8bWDQc4P/gIh6iKg116oRdDb2FyvaLy+2XPyc8xZX/9YXYg==",
+  "dgSpecHash": "QwZa9Kc+7a25Hyt77qUGS4CAbBIwLgZIiFwhd/hTA74qQiSgEOWXYqoY8z3hb6gN+2+W1D+ZE6JAj1LesCwpBA==",
   "success": true,
-  "projectFilePath": "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lasaru\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Lasaru\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

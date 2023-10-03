@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    color: rgb(15, 14, 14);
+    margin-top: 5px;
+}
+
+.upper{
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    width: 98%;
+    height: 10rem;
+}
+.lower{
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    width: 98%;
+    height:25rem;
+}
+.uppermain{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 5px;
+}
+
+.field{
+    height:99%;
+}
+
+.trow{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.button {
+    padding: 3px 30px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.drop1{
+    width: 10rem;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.tdata{
+    margin-left: 20px;
+}
+
+.table-container {
+    width: 97%;
+    overflow-x: auto;
+    margin-top: 10px;
+  }
+  
+  .eight-column-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  .eight-column-table th, .eight-column-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }

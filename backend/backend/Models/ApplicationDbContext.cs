@@ -15,6 +15,11 @@ namespace backend.Models
         public DbSet<Classroom> Classroom { get; set; }
 
         public DbSet<Subjects> Subjects { get; set; }
+        public DbSet<AllocateSubject> AllocateSubject { get; set; }
+
+        public DbSet<AllocateClass> AllocateClass { get; set; }
+
+
         
     }
 }

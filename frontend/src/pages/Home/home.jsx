@@ -19,6 +19,18 @@ const cardNames = [
     name: 'Subjects',
     path: '/subjects'
   },
+  {
+    name: 'Allocate Subjects',
+    path: '/allocatesub'
+  },
+  {
+    name: 'Allocate Classrooms',
+    path: '/allocateclass'
+  },
+  {
+    name: 'Detailed Report',
+    path: '/report'
+  },
 
 ];
 function home() {

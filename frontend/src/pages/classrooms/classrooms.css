@@ -123,18 +123,33 @@
 
 .table-container {
     width: 97%;
-    overflow-x: auto;
+    overflow-y: auto;
     margin-top: 10px;
   }
   
-  .eight-column-table {
+  .table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ddd;
   }
-  
-  .eight-column-table th, .eight-column-table td {
+  .table th{
+    background-color: rgb(235, 235, 235);
+    font-size: 15px;
+  }
+  .table th, .table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+    font-family: "Montserrat", sans-serif;
+    
   }
+
+  .button1 {
+    padding: 5px 10px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
