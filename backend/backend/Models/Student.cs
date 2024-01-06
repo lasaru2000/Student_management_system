@@ -16,7 +16,6 @@ namespace backend.Models
         [Column(TypeName = "Date")]
         public DateTime DateOfBirth { get; set; }
 
-        public int Age { get; set; }
         public string Classroom { get; set; }
 
         // Modify the DateOfBirth property to return a formatted string

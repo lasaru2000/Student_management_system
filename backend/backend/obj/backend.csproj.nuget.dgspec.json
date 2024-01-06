@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj": {}
+    "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj": {
+    "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj",
+        "projectUniqueName": "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\backend.csproj",
+        "projectPath": "D:\\Self-Projects\\stdmanage\\backend\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\Lasaru\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lasaru\\source\\repos\\backend\\backend\\obj\\",
+        "outputPath": "D:\\Self-Projects\\stdmanage\\backend\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lasaru\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -85,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

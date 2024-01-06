@@ -86,7 +86,6 @@ namespace backend.Controllers
             existingStudent.ContactNo = student.ContactNo;
             existingStudent.EmailAddress = student.EmailAddress;
             existingStudent.DateOfBirth = student.DateOfBirth;
-            existingStudent.Age = student.Age;
             existingStudent.Classroom = student.Classroom;
 
             // Save changes to the database

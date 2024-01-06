@@ -1,6 +1,7 @@
 ﻿using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace backend.Controllers
 {
@@ -88,9 +89,37 @@ namespace backend.Controllers
             }
 
             _context.Classroom.Remove(classroom);
+
+            await RemoveClassName(classroom.ClassName);
+
             await _context.SaveChangesAsync();
 
+
+
             return NoContent();
+        }
+
+        private async Task RemoveClassName (string className)
+        {
+            var allocateClasses = await _context.AllocateClass.ToListAsync();
+            foreach ( var allocateClass in allocateClasses)
+            {
+                if(!string.IsNullOrEmpty(allocateClass.Classrooms))
+                {
+                    var classroomsArray = allocateClass.Classrooms.Split(',');
+                    var updatedClassrooms = classroomsArray.Where(c => c.Trim() != className).ToList();
+                    allocateClass.Classrooms = string.Join(",", updatedClassrooms);
+
+                    if (updatedClassrooms.Count == 0)
+                    {
+                        _context.AllocateClass.Remove(allocateClass);
+                    }
+
+                }
+
+                await _context.SaveChangesAsync();
+            }
+
         }
 
     }

@@ -87,9 +87,32 @@ namespace backend.Controllers
             }
 
             _context.Subjects.Remove(subjects);
+
+            await RemoveSubject(subjects.SubjectName);
+
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        private async Task RemoveSubject (string subject)
+        {
+            var allocateSubjects = await _context.AllocateSubject.ToListAsync();
+
+            foreach (var allocateSubject in allocateSubjects)
+            {
+               if(!string.IsNullOrWhiteSpace(allocateSubject.Subjects))
+                {
+                    var subjectsArray = allocateSubject.Subjects.Split(",");
+                    var updateSubjects = subjectsArray.Where(x => x.Trim() != subject).ToList();
+                    allocateSubject.Subjects = string.Join(",", updateSubjects);
+
+                    if (updateSubjects.Count == 0)
+                    {
+                        _context.AllocateSubject.Remove(allocateSubject);
+                    }
+                }
+            }
         }
 
 

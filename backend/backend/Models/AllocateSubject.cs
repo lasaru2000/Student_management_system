@@ -6,6 +6,7 @@ namespace backend.Models
     {
         [Key]
         public int AllocateSubID { get; set; }
+
         public string TeacherName { get; set; }
 
         public string Subjects { get; set; }

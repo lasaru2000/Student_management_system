@@ -90,9 +90,27 @@ namespace backend.Controllers
             }
 
             _context.Teacher.Remove(teacher);
+
+
+            await RemoveTeacherFromAllocateSubject(teacher.FirstName + " " + teacher.LastName);
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        private async Task RemoveTeacherFromAllocateSubject(string teacherName)
+        {
+            var allocateSubjects = await _context.AllocateSubject
+                                         .Where(s => s.TeacherName == teacherName)
+                                         .ToListAsync();
+
+            if (allocateSubjects != null && allocateSubjects.Any())
+            {
+                _context.AllocateSubject.RemoveRange(allocateSubjects);
+                await _context.SaveChangesAsync();
+            }
+
+
         }
     }
 }

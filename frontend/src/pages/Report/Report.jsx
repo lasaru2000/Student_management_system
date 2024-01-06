@@ -40,7 +40,7 @@ function Report() {
   }, [selectedOption]);
 
   useEffect(() => {
-    axios.get('https://localhost:7190/api/allocateclass')
+    axios.get('https://localhost:7190/api/allocatesub')
       .then(response => {
         setClassrooms(response.data);
         })
@@ -155,7 +155,7 @@ function Report() {
                 {classrooms.map((classroom, index) => (
                 <tr key={index}>
                   <td>{classroom.teacherName}</td>
-                  <td>{classroom.classrooms}</td>
+                  <td>{classroom.subjects}</td>
                 </tr>
               ))}
               </tbody>

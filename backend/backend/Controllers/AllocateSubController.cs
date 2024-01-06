@@ -14,8 +14,15 @@ namespace backend.Controllers
         {
             _context = context;
         }
+        // GET : api/allocatesub
+        [HttpGet]
+        public IActionResult Getsubjects()
+        {
+            var subjects = _context.AllocateSubject.ToList();
+            return Ok(subjects);
 
-        // GET: api/allocatesub
+        }
+        // GET: api/allocatesub/name
         [HttpGet("{name}")]
         public async Task <IActionResult> GetAllocateSubjects( string name  )
         {

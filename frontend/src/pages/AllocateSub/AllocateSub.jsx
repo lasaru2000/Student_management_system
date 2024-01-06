@@ -164,10 +164,11 @@ useEffect(() => {
 
        {/* lower section */}
 
-        <div className='uppermain'>
-        <div className='lower'>
+        <div className='uppermainSub'>
+        <div className='lowerSub'>
             <fieldset className='field'>
                 <legend>Allocate Subjects</legend>
+                <div>
                 <table className='trow'>
                 <tr ><td>Subject</td>
                 <td >
@@ -182,6 +183,8 @@ useEffect(() => {
       </td>
       </tr>
                 </table>
+                </div>
+               
                 <div className='uppermain'>
                     <div className='table-container'>
                     <table className='table'>

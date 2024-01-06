@@ -71,7 +71,6 @@ function Students() {
   "contactNo": contactNo,
   "emailAddress": email,
   "dateOfBirth": dob,
-  "age": age,
   "classroom": selectedOption
     };
 
@@ -89,7 +88,7 @@ function Students() {
        setContactNo('');
        setEmail('');
        setDOB('');
-       setAge('');
+
        setSelectedOption('');
 
        //call get again to load data again
@@ -110,27 +109,29 @@ function Students() {
 
   // age calculation 
 
-  useEffect(() => {
-    if (dob) {
-      // Calculate age based on the selected DOB
-      const currentDate = new Date();
-      const selectedDate = new Date(dob);
-      const ageDiff = currentDate.getFullYear() - selectedDate.getFullYear();
+const calculateAge = (dob) => {
 
-      // Check if the birthday for this year has already occurred
-      if (
-        currentDate.getMonth() < selectedDate.getMonth() ||
-        (currentDate.getMonth() === selectedDate.getMonth() &&
-          currentDate.getDate() < selectedDate.getDate())
-      ) {
-        setAge(ageDiff - 1); // Subtract 1 year if birthday hasn't occurred yet
-      } else {
-        setAge(ageDiff);
-      }
-    } else {
-      setAge(''); // Reset age if DOB is cleared
-    }
-  }, [dob]);
+  const dobDate = new Date(dob);
+  const now = new Date();
+
+  // Calculate the difference in years between the current year and the year of birth
+  let age = now.getFullYear() - dobDate.getFullYear();
+
+  // Calculate the difference in months between the current month and the month of birth
+  const monthDiff = now.getMonth() - dobDate.getMonth();
+
+
+  // If the month difference is negative or if the month difference is 0 and the current date is before the date of birth,
+                                                                                  
+  if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dobDate.getDate())) {
+    // If the birthday hasn't occurred yet, decrement the age by 1
+    age--;
+  }
+
+  // Return the calculated age
+  return age;
+};
+
 
   //edit part
 
@@ -156,7 +157,6 @@ function Students() {
       "contactNo": contactNo,
       "emailAddress": email,
       "dateOfBirth": dob,
-      "age": age,
       "classroom": selectedOption
     };
 
@@ -173,7 +173,6 @@ function Students() {
         setContactNo('');
         setEmail('');
         setDOB('');
-        setAge('');
         setSelectedOption('');
 
         //call get again to load data again
@@ -326,9 +325,9 @@ function Students() {
                 <input
               type="number"
               className='input'
-              onChange={(e) => setAge(e.target.value)} 
-              value={age}
-              disabled
+              // onChange={(e) => setAge(e.target.value)} 
+              value={calculateAge(dob)}
+              readOnly
             />
             </div>
             <div className='textbox'>
@@ -387,7 +386,7 @@ function Students() {
             <td>{student.contactNo}</td>
             <td>{student.emailAddress}</td>
             <td>{student.dateOfBirthString}</td>
-            <td>{student.age}</td>
+            <td>{calculateAge(student.dateOfBirthString)}</td>
             <td>{student.classroom}</td>
             <td> <div >
                <button className='button1'  onClick={() => handleEditClick(student)}>Edit</button>
